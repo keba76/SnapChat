@@ -23,5 +23,4 @@ struct User {
         _firstName = firstName
         _uid = uin
     }
-    
 }

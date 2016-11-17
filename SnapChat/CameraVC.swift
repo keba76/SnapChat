@@ -12,7 +12,7 @@ import FirebaseAuth
 class CameraVC: AVCamCameraViewController, AVCameraVCDelegate {
     
     @IBOutlet weak var cameraBtn: UIButton!
-
+    
     @IBOutlet weak var recordBtn: UIButton!
     
     @IBOutlet weak var previewView: AVCamPreviewView!
@@ -30,11 +30,11 @@ class CameraVC: AVCamCameraViewController, AVCameraVCDelegate {
             return
         }
     }
-
+    
     @IBAction func recordBtnPressed(_ sender: Any) {
         super.toggleMovieRecording()
     }
-
+    
     @IBAction func changeCameraBtnPressed(_ sender: Any) {
         changeCamera()
     }
@@ -74,4 +74,4 @@ class CameraVC: AVCamCameraViewController, AVCameraVCDelegate {
     }
 }
 
- 
+

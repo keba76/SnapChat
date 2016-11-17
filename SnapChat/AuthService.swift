@@ -52,8 +52,8 @@ class AuthService {
             }
         })
     }
-
-
+    
+    
     func handleFirebaseError(error: NSError, onComplete: Completion?) {
         
         if let errorCode = FIRAuthErrorCode(rawValue: error.code) {
@@ -69,8 +69,4 @@ class AuthService {
             }
         }
     }
-
-
-
-
 }

@@ -28,7 +28,6 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,14 +82,14 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         let user = users[indexPath.row]
         cell.updateUI(user: user)
         return cell
     }
- 
+    
     @IBAction func sendPRBtnPressed(sender: AnyObject) {
         if let url = videoURL {
             let videoName = "\(UUID().uuidString)\(url)"
@@ -106,5 +105,4 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.dismiss(animated: true, completion: nil)
         }
     }
-
 }

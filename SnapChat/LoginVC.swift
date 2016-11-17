@@ -12,18 +12,17 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var emailField: RoundTextField!
     @IBOutlet weak var passwordField: RoundTextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
     @IBAction func logginPressed(_ sender: Any) {
         if let email = emailField.text, let password = passwordField.text, email.characters.count > 0 && password.characters.count > 0 {
-        
+            
             AuthService.instance.login(email: email, password: password, onComplete: { (errMsg, data) in
                 guard errMsg == nil else {
-                   let alert = UIAlertController(title: "Error Authentication", message: errMsg, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Error Authentication", message: errMsg, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                     return
                 }
@@ -36,5 +35,5 @@ class LoginVC: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-
+    
 }
